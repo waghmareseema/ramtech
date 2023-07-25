@@ -1,0 +1,306 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="stylecart.css">
+
+  <!--
+    - google font link
+  -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+
+  <!--
+    - main container
+  -->
+
+  <main class="container">
+
+    <h1 class="heading">
+      <ion-icon name="cart-outline"></ion-icon> Shopping Cart
+    </h1>
+
+    <div class="item-flex">
+
+      <!--
+       - checkout section
+      -->
+      <section class="checkout">
+
+        <h2 class="section-heading">Payment Details</h2>
+
+        <div class="payment-form">
+
+          <div class="payment-method">
+
+            <button class="method selected">
+              <ion-icon name="card"></ion-icon>
+
+              <span>Credit Card</span>
+
+              <ion-icon class="checkmark fill" name="checkmark-circle"></ion-icon>
+            </button>
+
+            <button class="method">
+              <ion-icon name="logo-paypal"></ion-icon>
+
+              <span>PayPal</span>
+
+              <ion-icon class="checkmark" name="checkmark-circle-outline"></ion-icon>
+            </button>
+
+          </div>
+
+          <form action="#">
+
+            <div class="cardholder-name">
+              <label for="cardholder-name" class="label-default">Cardholder name</label>
+              <input type="text" name="cardholder-name" id="cardholder-name" class="input-default">
+            </div>
+
+            <div class="card-number">
+              <label for="card-number" class="label-default">Card number</label>
+              <input type="number" name="card-number" id="card-number" class="input-default">
+            </div>
+
+            <div class="input-flex">
+
+              <div class="expire-date">
+                <label for="expire-date" class="label-default">Expiration date</label>
+
+                <div class="input-flex">
+
+                  <input type="number" name="day" id="expire-date" placeholder="" min="1" max="31"
+                    class="input-default">
+                  /
+                  <input type="number" name="month" id="expire-date" placeholder="" min="1" max="12"
+                    class="input-default">
+
+                </div>
+              </div>
+
+              <div class="cvv">
+                <label for="cvv" class="label-default">CVV</label>
+                <input type="number" name="cvv" id="cvv" class="input-default">
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+        <button class="btn btn-primary">
+          <b>Pay</b> ₹ <span id="payAmount">4876.20</span>
+        </button>
+
+      </section>
+
+
+      <!--
+        - cart section
+      -->
+      <section class="cart">
+
+        <div class="cart-item-box">
+
+          <h2 class="section-heading">Order Summery</h2>
+
+          <div class="product-card">
+
+            <div class="card">
+
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWFycGhvbmVzfGVufDB8fDB8fHww&w=1000&q=80.jpg" alt="" height="250" width="250">
+              </div>
+
+              <div class="detail">
+
+                <h4 class="product-name"> Headset</h4>
+
+                <div class="wrapper">
+
+                  <div class="product-qty">
+                    <button id="decrement">
+                      <ion-icon name="remove-outline"></ion-icon>
+                    </button>
+
+                    <span id="quantity">1</span>
+
+                    <button id="increment">
+                      <ion-icon name="add-outline"></ion-icon>
+                    </button>
+                  </div>
+
+                  <div class="price">
+                    ₹ <span id="price">2500</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <button class="product-close-btn">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+            </div>
+
+          </div>
+          <div class="card">
+
+            <div class="img-box">
+              <img src="data:image/jpeg;base64,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" alt="" height="250" width="250">
+            </div>
+            <div class="product-card">
+            <div class="detail">
+
+              <h4 class="product-name"> Mouse</h4>
+
+              <div class="wrapper">
+
+                <div class="product-qty">
+                  <button id="decrement">
+                    <ion-icon name="remove-outline"></ion-icon>
+                  </button>
+
+                  <span id="quantity">1</span>
+
+                  <button id="increment">
+                    <ion-icon name="add-outline"></ion-icon>
+                  </button>
+                </div>
+
+                <div class="price">
+                  ₹ <span id="price">1200</span>
+                </div>
+
+              </div>
+
+            </div>
+
+            <button class="product-close-btn">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+          </div
+
+          <div class="product-card">
+
+            <div class="card">
+
+              <div class="img-box">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1_fvTOroMc2dA-6mAt0nK7Y-NCNfaSB8vSQ&usqp=CAU.jpg" alt="" height="250" width="250">
+              </div>
+
+              <div class="detail">
+
+                <h4 class="product-name"> LG TV</h4>
+
+                <div class="wrapper">
+
+                  <div class="product-qty">
+                    <button id="decrement">
+                      <ion-icon name="remove-outline"></ion-icon>
+                    </button>
+
+                    <span id="quantity">1</span>
+
+                    <button id="increment">
+                      <ion-icon name="add-outline"></ion-icon>
+                    </button>
+                  </div>
+
+                  <div class="price">
+                    ₹ <span id="price">55000</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <button class="product-close-btn">
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="wrapper">
+
+          <div class="discount-token">
+
+            <label for="discount-token" class="label-default">Gift card/Discount code</label>
+
+            <div class="wrapper-flex">
+
+              <input type="text" name="discount-token" id="discount-token" class="input-default">
+
+              <button class="btn btn-outline">Apply</button>
+
+            </div>
+
+          </div>
+
+          <div class="amount">
+
+            <div class="subtotal">
+              <span>Subtotal</span> <span>₹ <span id="subtotal">4876</span></span>
+            </div>
+
+            <div class="tax">
+              <span>Tax</span> <span>₹ <span id="tax">0.20</span></span>
+            </div>
+
+            <div class="shipping">
+              <span>Shipping</span> <span>₹ <span id="shipping">0.00</span></span>
+            </div>
+
+            <div class="total">
+              <span>Total</span> <span>₹ <span id="total">4876.20</span></span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="scriptcart.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+
+</body>
+
+</html>

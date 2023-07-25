@@ -1,0 +1,101 @@
+   
+<html>   
+    <head>  
+    
+    <title> Login Page </title>  
+
+
+         <style>
+    
+        body{
+        background-image: url('https://e0.pxfuel.com/wallpapers/204/284/desktop-wallpaper-electronics-shopping-store-buy-home-kitchen-appliances-online-james-co.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+            }
+           
+        </style> 
+
+     <style>
+    
+            button {   
+    background-color: orangered;   
+           width: 100%;  
+            color:red;   
+            padding: 15px;   
+              
+              
+             
+             }   
+         
+     input[type=text], input[type=password],input[type=email],input[type=number] {   
+            width: 100%;   
+            margin: 8px 0;  
+            padding: 12px 20px;   
+            border: 3px solid orangered;   
+              
+        } 
+        
+        .gradient{
+                    width: 400px;
+                    height: 300px;
+                    
+                    
+                } 
+      
+       
+            
+         
+      
+    </style>   
+    </head>    
+<body>    
+          
+         <center>
+           
+            
+               <div class="gradient"> 
+                
+                <form name="myForm" action="loginpage (1).html" ondarkbluemit="return validateForm()" method="post">
+                    <h1 align="center" style="color:orangered;">CREATE PROFILE</h1>
+                  <p style="color:orangered;">  NAME :
+                    <input type="text" name="fname" style="color: orangered;">
+                  </p>
+                  
+                  <p style="color: orangered;">GENDER :
+                      <input type="radio" name="gender" value="Male" style="color: orangered;">Male
+                      <input type="radio" name="gender" value="Female" style="color: orangered;">Female
+                  </p> 
+        
+                  <p style="color: orangered;">PHONE NUMBER :
+                      <input type="tel" name="phone" pattern="^\d{10}$"  style="color: orangered;" required >
+                  </p>
+        
+                  <p style="color:orangered;">COUNTRY :
+                      <select name = "Country" style="color: orangered;" required>
+                          <option value="Select" style="color: orangered;" >Select</option>
+                          <option value="India" style="color: orangered;" >India</option>
+                          
+                      </select>
+                  </p>
+        
+
+        
+                  </hr>
+                  
+                  <p style="color:orangered;">EMAIL :
+                      <input type="email" name="Email" style="color: orangered;" required>
+                  </p>
+                  <p style="color:orangered;"> PASSWORD :
+                      <input type = "password" name="password"  style="color: orangered;" required>
+                  </p>
+        
+                  <p>
+                     <strong><input type="submit" style="color:orangered;"  value="SUBMIT"></strong> 
+                        
+                    </p>
+            
+            </form>
+           
+             
+        </body>     
+    </html> 
